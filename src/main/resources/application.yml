@@ -1,9 +1,45 @@
+server.port: 8081
 spring.main.banner-mode: off
+spring.main.allow-bean-definition-overriding: true
 spring.application.name: springboot
 
-spring.security:
-  user:
-    name: user
-    password: user
+spring:
+  datasource:
+    url: jdbc:h2:mem:db
+    username: sa
+    password:
 
-springdoc.swagger-ui.path: /swagger-ui.html
+spring.h2.console:
+  enabled: true
+
+spring.jpa.properties:
+  hibernate:
+    show_sql: off
+    format_al: off
+    use_sql_comments: off
+
+springdoc:
+  writer-with-default-pretty-printer: on
+  override-with-generic-response: off
+
+  swagger-ui:
+    path: /swagger-ui.html
+    groups-order: desc
+    urls-primary-name: v1
+    display-request-duration: on
+    oauth:
+      scopes: all
+
+  bearer:
+    enabled: on
+    tokens:
+      - name: System
+        token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzeXN0ZW0iLCJuYW1lIjoic3lzdGVtIiwiaWF0IjoxNzA3MjMxMTU3LCJleHAiOjE3MDk4MjMxNTd9.fVHoWmKss0LEW5ll2hunSARuUyyQ_uQfcSnczj6cwuQ
+
+  servers:
+    - url: /
+      description: Default
+
+#logging.level:
+#  org.hibernate.type.descriptor.sql: trace
+#  'org.springframework.security.oauth2': trace

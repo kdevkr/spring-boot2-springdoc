@@ -1,0 +1,6 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<p>Hello, <span sec:authentication="name">Name</span></p>
+<p><a th:href="logout">logout</a></p>
+<p><a th:href="swagger-ui.html">Swagger API Documentation</a></p>
+</html>
